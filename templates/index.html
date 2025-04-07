@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Air Quality Dashboard</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <header>
+            <h1>Air Quality Dashboard</h1>
+            <p class="last-updated">Last updated: <span id="update-date">Not yet run</span></p>
+        </header>
+
+        <section class="upload-section">
+            <h2><i class="fas fa-cloud-upload-alt"></i> Upload Dataset</h2>
+            <div class="file-upload">
+                <label>
+                    <span class="btn">Choose CSV File</span>
+                    <span id="file-name">No file selected</span>
+                    <input type="file" id="file-input" accept=".csv">
+                </label>
+                <button id="upload-btn">Upload Dataset</button>
+            </div>
+        </section>
+
+        <section class="analysis-section">
+            <h2><i class="fas fa-chart-line"></i> Run Analysis</h2>
+            <button id="analyze-btn">Run Full Analysis</button>
+        </section>
+
+        <section class="visualization-section">
+            <h2><i class="fas fa-chart-bar"></i> Data Visualizations</h2>
+            <div class="chart-container">
+                <canvas id="trend-chart"></canvas>
+            </div>
+            <div class="chart-controls">
+                <select id="chart-type">
+                    <option value="line">Line Chart</option>
+                    <option value="bar">Bar Chart</option>
+                </select>
+                <button id="export-chart">Export Chart</button>
+            </div>
+        </section>
+
+        <section class="download-section">
+            <h2><i class="fas fa-download"></i> Download Results</h2>
+            <div class="download-options">
+                <button id="download-excel">Download Excel</button>
+                <button id="download-pdf">Download PDF Report</button>
+            </div>
+        </section>
+
+        <footer>
+            <p>Air Quality Dashboard &copy; 2023 | Data updated monthly</p>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
